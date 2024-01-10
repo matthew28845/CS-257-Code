@@ -1,2 +1,2 @@
 # CS-257-Code
-Code for Software Design class, Winter 2024
+This repository contains code for the Software Design class at Carleton, Winter 2024
