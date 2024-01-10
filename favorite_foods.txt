@@ -5,3 +5,8 @@ Chicken wings
 Hamburgers
 
 This document was created with Vim, as I am awesome
+
+Here are some more favorite foods:
+
+Ice cream
+Cookies
