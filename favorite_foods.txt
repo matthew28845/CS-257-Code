@@ -1,0 +1,7 @@
+Here are some of my favorite foods:
+
+Pizza
+Chicken wings
+Hamburgers
+
+This document was created with Vim, as I am awesome
