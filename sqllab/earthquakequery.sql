@@ -5,4 +5,4 @@ SELECT * FROM earthquakes WHERE latitude BETWEEN 40 AND 50 AND longitude BETWEEN
 SELECT AVG(mag) FROM earthquakes;
 
 -- Count the number of earthquakes in the period with a magnitude above 5
-SELECT COUNT(mag) FROM earthquakes WHERE magnitude > 5;
+SELECT COUNT(mag) FROM earthquakes WHERE mag > 5;
