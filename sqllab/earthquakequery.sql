@@ -1,5 +1,5 @@
--- Locate all earthquakes within a 10 degree box of Minneapolis.
-SELECT * FROM earthquakes WHERE latitude BETWEEN 40 AND 50 AND longitude BETWEEN -87 and -97 ORDER BY latitude DESC;
+-- Locate all earthquakes within a 10 degree box of San Francisco, listing only the top 10 by latitude.
+SELECT * FROM earthquakes WHERE latitude BETWEEN 32 AND 42 AND longitude BETWEEN -127 and -117 ORDER BY latitude DESC FETCH FIRST 10 ROWS ONLY;
 
 -- Calculate the average magnitude of all earthquakes within the period
 SELECT AVG(mag) FROM earthquakes;
