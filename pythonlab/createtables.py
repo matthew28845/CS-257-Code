@@ -8,4 +8,4 @@ conn = psycopg2.connect(host="localhost",
 
 cur = conn.cursor()
 cur.execute("DROP TABLE IF EXISTS topcities;")
-cur.execute("CREATE TABLE topcities (city TEXT, state TEXT, population LONG, latitude DOUBLE, longitude DOUBLE);")
+cur.execute("CREATE TABLE topcities (city TEXT, state TEXT, population INTEGER, latitude DECIMAL, longitude DECIMAL);")
