@@ -51,10 +51,11 @@ print("The farthest south US city in the top 1000 is", row[0], "and its populati
 myState = str(input("Enter a state to see the sum of its population: "))
 if len(myState) == 2:
     cur.execute("SELECT * FROM stateabbrs WHERE abbr = %s", (myState,))
-    myState = cur.fetchone()
+    row = cur.fetchone()
+    myState = row[1]
 print("You selected", myState)
 cur.execute("SELECT SUM(population) FROM topcities WHERE state = %s", (myState,))
 row = cur.fetchone()
-print("The sum of the cities in that state is", row)
+print("The sum of the cities in that state is", row[0])
 cur.close()
 conn.close()
