@@ -52,7 +52,7 @@ myState = str(input("Enter a state to see the sum of its population: "))
 if len(myState) == 2:
     cur.execute("SELECT * FROM stateabbrs WHERE abbr = %s", (myState,))
     row = cur.fetchone()
-    myState = row[1]
+    myState = row[0]
 print("You selected", myState)
 cur.execute("SELECT SUM(population) FROM topcities WHERE state = %s", (myState,))
 row = cur.fetchone()
