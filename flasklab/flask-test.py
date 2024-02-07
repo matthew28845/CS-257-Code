@@ -17,7 +17,8 @@ def my_addition(word1, word2):
     word1 = int(word1)
     word2 = int(word2)
     the_sum = word1 + word2
-    the_string = "The sum is: " + str(the_sum);
+    the_sum = str(the_sum)
+    the_string = "The sum is: " + the_sum;
     return the_sum
 
 @app.route('/color/<word1>')
