@@ -36,7 +36,7 @@ def my_pop(abbrev):
     cur.execute("SELECT * FROM statepopulations WHERE code = %s", [my_abbreviation],)
     row = cur.fetchone()
     my_population = str(int(row[2]))
-    the_string = "The population of" + str(row[1]) + "is: " + my_population;
+    the_string = "The population of " + str(row[1]) + " is: " + my_population;
     return the_string
 
 
