@@ -17,9 +17,10 @@ cur = conn.cursor()
 def welcome():
     if request.method == 'POST':
         state = request.form['stateinput']
-        url_to_redirect = "/pop/"+state
+        url_to_redirect = "/pop/" + state
         return redirect(url_to_redirect)
     return render_template("index.html")
+
 
 @app.route('/rand/<low>/<high>')
 def rand(low, high):
@@ -30,6 +31,11 @@ def rand(low, high):
 
     num = random.randint(low_int, high_int)
     return render_template("random.html", randNum=num)
+
+
+@app.route('/pop/')
+def blankpop():
+    return "Enter a state, idiot"
 
 
 @app.route('/pop/<state>')
