@@ -17,7 +17,7 @@ cur = conn.cursor()
 def welcome():
     if request.method == 'POST':
         state = request.form['stateinput']
-        url_to_redirect = "/"+state
+        url_to_redirect = "/pop/"+state
         return redirect(url_to_redirect)
     return render_template("index.html")
 
