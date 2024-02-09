@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect, request, url_for
 import random
 import psycopg2
 
@@ -12,10 +12,13 @@ conn = psycopg2.connect(host="localhost",
 
 cur = conn.cursor()
 
-@app.route('/')
-def welcome():
-    return render_template("index.html")
 
+@app.route('/', methods=("GET", "POST"))
+def welcome():
+    if request.method == 'POST':
+        state = request.form['stateinput']
+        return redirect(url_for(state))
+    return render_template("index.html")
 
 @app.route('/rand/<low>/<high>')
 def rand(low, high):
@@ -27,15 +30,19 @@ def rand(low, high):
     num = random.randint(low_int, high_int)
     return render_template("random.html", randNum=num)
 
+
 @app.route('/pop/<state>')
 def pop(state):
     my_state = state
     cities_list = list()
-    cur.execute("SELECT * FROM topcities WHERE state = %s ORDER BY population DESC FETCH FIRST 5 ROWS ONLY;", [my_state],)
+    cur.execute("SELECT * FROM topcities WHERE state = %s ORDER BY population DESC FETCH FIRST 5 ROWS ONLY;",
+                [my_state], )
     for i in range(5):
         row = cur.fetchone()
         cities_list.append(row)
-    return render_template("pop.html", city1=cities_list[0], city2=cities_list[1], city3=cities_list[2], city4=cities_list[3], city5=cities_list[4])
+    return render_template("pop.html", city1=cities_list[0], city2=cities_list[1], city3=cities_list[2],
+                           city4=cities_list[3], city5=cities_list[4])
+
 
 if __name__ == '__main__':
     my_port = 5132
