@@ -3,7 +3,7 @@ from flask import render_template
 import random
 import psycopg2
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 conn = psycopg2.connect(host="localhost",
                         port=5432,
                         database="sigmondm",
