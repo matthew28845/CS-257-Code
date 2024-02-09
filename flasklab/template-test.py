@@ -17,7 +17,8 @@ cur = conn.cursor()
 def welcome():
     if request.method == 'POST':
         state = request.form['stateinput']
-        return redirect(url_for(state))
+        url_to_redirect = "/"+state
+        return redirect(url_to_redirect)
     return render_template("index.html")
 
 @app.route('/rand/<low>/<high>')
