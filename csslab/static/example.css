@@ -16,3 +16,10 @@ p {
 .big-button{
   font-size: large;
 }
+
+.time {
+  font-size: large;
+  font-family: sans-serif;
+  background-color: black;
+  color: lightskyblue;
+}
