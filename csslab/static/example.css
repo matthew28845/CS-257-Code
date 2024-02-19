@@ -1,21 +1,18 @@
+p {
+  color: white;
+  text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .my-class{
   text-align: center;
   color: blue;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .center-para{
   text-align: center;
   margin-top: 20px;
-  color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .big-button{
   font-size: large;
-}
-
-.cool-para{
-  color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
